@@ -1,0 +1,15 @@
+ftest<-read.csv(file.choose(),sep=",",header=T)
+var.test(ftest$density,ftest$block,alternative = "two.sided")
+"one way anova"
+data1<-read.csv(file.choose(),sep = ",",header = T)
+names(data1)
+summary(data1)
+head(data1)
+one.way <- aov(yield ~ fertilizer, data = data1)
+summary(one.way)
+"two way anova"
+data2<-read.csv(file.choose(),sep=",",header = T)
+names(data2)
+summary(data2)
+two.way <- aov(yield ~ fertilizer + density, data = data2)
+summary(two.way)
